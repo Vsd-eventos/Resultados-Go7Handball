@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://script.google.com https://script.googleusercontent.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Resultados en vivo · VSD Eventos</title>
+  <meta name="description" content="Resultados en vivo del torneo de Handball Mami Hockey. Argentina, Chile y Uruguay.">
+  <meta name="theme-color" content="#0A0A0B">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23D7192A'/%3E%3Ctext x='32' y='40' font-family='Arial' font-weight='700' font-size='24' fill='white' text-anchor='middle'%3EVSD%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://script.google.com">
+  <link rel="preconnect" href="https://script.googleusercontent.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="hero">
+  <!-- Líneas de cancha de handball de fondo -->
+  <svg class="cancha-bg" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#fff" stroke-width="1.5">
+      <rect x="10" y="10" width="380" height="180"/>
+      <line x1="200" y1="10" x2="200" y2="190"/>
+      <path d="M10 45 A55 55 0 0 1 10 155"/>
+      <path d="M10 25 A75 75 0 0 1 10 175" stroke-dasharray="6 6"/>
+      <path d="M390 45 A55 55 0 0 0 390 155"/>
+      <path d="M390 25 A75 75 0 0 0 390 175" stroke-dasharray="6 6"/>
+      <line x1="10" y1="88" x2="4" y2="88"/><line x1="10" y1="112" x2="4" y2="112"/>
+      <line x1="390" y1="88" x2="396" y2="88"/><line x1="390" y1="112" x2="396" y2="112"/>
+    </g>
+  </svg>
+
+  <div class="hero-inner wrap">
+    <a class="logo logo-vsd" href="./" aria-label="VSD Eventos — inicio">
+      <span class="logo-big">VSD</span>
+      <span class="logo-small">eventos</span>
+    </a>
+
+    <div class="hero-title">
+      <p class="kicker">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 8c4 2 12 2 16 0M4 16c4-2 12-2 16 0M12 2c-3 4-3 16 0 20" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        Handball · Mami Hockey
+      </p>
+      <h1>Resultados <span>en vivo</span></h1>
+      <ul class="paises" aria-label="Países participantes">
+        <li>
+          <svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#74ACDF"/><rect y="6.67" width="30" height="6.67" fill="#fff"/><circle cx="15" cy="10" r="3" fill="none" stroke="#F6B40E" stroke-width="1.2" stroke-dasharray="1 .9"/><circle cx="15" cy="10" r="1.8" fill="#F6B40E"/></svg>
+          Argentina
+        </li>
+        <li>
+          <svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect y="10" width="30" height="10" fill="#D52B1E"/><rect width="10" height="10" fill="#0039A6"/><polygon fill="#fff" points="5,2 5.674,4.073 7.853,4.073 6.09,5.354 6.763,7.427 5,6.146 3.237,7.427 3.91,5.354 2.147,4.073 4.326,4.073"/></svg>
+          Chile
+        </li>
+        <li>
+          <svg viewBox="0 0 27 18" aria-hidden="true"><rect width="27" height="18" fill="#fff"/><g fill="#0038A8"><rect y="2" width="27" height="2"/><rect y="6" width="27" height="2"/><rect y="10" width="27" height="2"/><rect y="14" width="27" height="2"/></g><rect width="10" height="10" fill="#fff"/><circle cx="5" cy="5" r="3.1" fill="none" stroke="#FCD116" stroke-width="1.3" stroke-dasharray="1 .95"/><circle cx="5" cy="5" r="1.9" fill="#FCD116"/></svg>
+          Uruguay
+        </li>
+      </ul>
+    </div>
+
+    <div class="logo logo-go7" role="img" aria-label="GO7 Go Seven">
+      <span class="logo-big">GO7</span>
+      <span class="logo-small">Go Seven</span>
+    </div>
+  </div>
+</header>
+
+<nav class="filtros wrap" id="filtros" aria-label="Filtros">
+  <div class="filtro-grupo">
+    <span class="filtro-label">Día</span>
+    <div class="chips" id="f-dia" role="group" aria-label="Filtrar por día"></div>
+  </div>
+  <div class="filtro-grupo">
+    <span class="filtro-label">Categoría</span>
+    <div class="chips" id="f-cat" role="group" aria-label="Filtrar por categoría"></div>
+  </div>
+</nav>
+
+<div class="estado wrap" id="estado" role="status" aria-live="polite">
+  <span class="dot" aria-hidden="true"></span>
+  <span id="estado-txt">Conectando…</span>
+  <span id="contador" class="contador"></span>
+</div>
+
+<main class="wrap">
+  <section id="grid" class="grid" aria-label="Partidos">
+    <div class="card skel"></div><div class="card skel"></div><div class="card skel"></div>
+  </section>
+  <p id="vacio" class="vacio" hidden>Todavía no hay resultados para este filtro.</p>
+</main>
+
+<footer class="pie">
+  <div class="wrap">Organiza <strong>VSD Eventos</strong> · <strong>GO7</strong> Go Seven · Torneo de Handball Mami Hockey</div>
+</footer>
+
+<template id="tpl-card">
+  <article class="card">
+    <header class="card-top">
+      <span class="cat"></span>
+      <span class="cancha">
+        <svg viewBox="0 0 24 16" aria-hidden="true"><rect x="1" y="1" width="22" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="12" y1="1" x2="12" y2="15" stroke="currentColor" stroke-width="1.4"/><path d="M1 4.5a3.5 3.5 0 0 1 0 7M23 4.5a3.5 3.5 0 0 0 0 7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+        <span class="cancha-txt"></span>
+      </span>
+    </header>
+    <div class="match">
+      <div class="team">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 3h8v4a4 4 0 0 1-8 0z"/><path d="M8 4.5H5a3 3 0 0 0 3 3.5M16 4.5h3a3 3 0 0 1-3 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M11 11h2v4h3v3H8v-3h3z"/></svg>
+        <span class="nombre"><span class="name"></span><span class="sub">Ganador</span></span>
+        <span class="score"></span>
+      </div>
+      <div class="team">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 3h8v4a4 4 0 0 1-8 0z"/><path d="M8 4.5H5a3 3 0 0 0 3 3.5M16 4.5h3a3 3 0 0 1-3 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M11 11h2v4h3v3H8v-3h3z"/></svg>
+        <span class="nombre"><span class="name"></span><span class="sub">Ganador</span></span>
+        <span class="score"></span>
+      </div>
+    </div>
+    <footer class="card-foot">
+      <span class="when"></span>
+      <span class="tag"></span>
+    </footer>
+  </article>
+</template>
+
+</body>
+</html>
