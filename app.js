@@ -3,7 +3,7 @@
   /* ================= CONFIGURACIÓN ================= */
   const CONFIG = {
     // Pegá acá la URL de tu App Web (termina en /exec)
-    API_URL: 'https://script.google.com/macros/s/AKfycbyF7PxInuR1T9Llu7cJgDc189yiLqo8t_jfMFnqbhygV7OSTx1KhQogJJ-ls1y4dQgb/exec',
+    API_URL: 'https://script.google.com/macros/s/AKfycbyul51I0X5p4BhQOYaIcMuLr7oRYNYm2tvprmDTIoXSo1KmWe7FKMIxjb_tW2rMOyc_/exec',
     POLL_MS: 30000,          // cada cuánto se actualiza (30 s)
     JITTER_MS: 10000,        // dispersión aleatoria para no pegarle todos juntos
     MAX_BACKOFF_MS: 300000,  // espera máxima si hay errores (5 min)
@@ -19,7 +19,7 @@
   ];
   const CATS = [
     'Menor Masculino', 'Menor Femenino', 'Cadete Masculino', 'Cadete Femenino',
-    'Infantil Masculino', 'Infantil Femenino', 'Juvenil Femenino', 'Juvenil Masculino'
+    'Infantil Masculino', 'Infantil Femenino', 'Juvenil Femenino'
   ];
   const CAT_ITEMS = [{ id: 'all', txt: 'Todas' }].concat(CATS.map(c => ({ id: c, txt: c })));
   const DIA_TXT = { V: 'Viernes', S: 'Sábado', D: 'Domingo', O: '' };
